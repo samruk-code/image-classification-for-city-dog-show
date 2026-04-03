@@ -1,6 +1,5 @@
 # 🐾 Image Classification for City Dog Show
  
-> **Udacity AWS AI/ML Scientist Nanodegree — Project 1**  
 > Evaluating CNN architectures (AlexNet, VGG, ResNet) to classify dog breeds and filter non-dog registrations for a citywide dog show.
  
 ---
