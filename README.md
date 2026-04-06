@@ -12,14 +12,14 @@ The challenge: some people may attempt to register pets that aren't actually dog
 
 The goal is to use an already-developed Python image classifier to catch invalid registrations — and to determine which classification algorithm performs best for this task.
 
-> **Note:** The classifier itself was provided. The engineering work was building the full Python pipeline around it — argument parsing, label extraction, classification, results adjustment, statistics, and formatted output.
+> **Note:** The classifier itself was provided. The engineering work involved building the full Python pipeline around it — argument parsing, label extraction, classification, results adjustment, statistics, and formatted output.
 
 ---
 
 ## Objectives
 
 1. Correctly identify which pet images are of **dogs** — even if the breed is misclassified — and which are **not dogs**.
-2. Correctly classify the **breed** of dog for images that are of dogs.
+2. Correctly classify the **breed** of dog for images that contain dogs.
 3. Determine which CNN architecture — **ResNet**, **AlexNet**, or **VGG** — best achieves objectives 1 and 2.
 4. Measure the **runtime** of each algorithm and assess whether a faster model provides a "good enough" result given the accuracy–speed trade-off.
 
@@ -39,17 +39,17 @@ Three pre-trained CNN architectures (trained on ImageNet) were evaluated:
 
 ## Key Results
 
-| Model | Dog Detection | Breed Classification | Runtime |
-|-------|:---:|:---:|:---:|
-| **VGG** | Highest | Highest | Slowest |
-| **ResNet** | High | High | Moderate |
-| **AlexNet** | Moderate | Lowest | Fastest |
+| Model | % Correct Dogs | % Correct Non-Dogs | % Correct Breed | Runtime |
+|-------|:---:|:---:|:---:|:---:|
+| **VGG** | 100% | 100% | 93.3% | Slowest |
+| **ResNet** | 100% | 90% | 90.0% | Moderate |
+| **AlexNet** | 100% | 100% | 80.0% | Fastest |
 
-- **VGG** achieved the highest overall accuracy for both dog detection and breed classification — the recommended choice when correctness is the priority.
-- **ResNet** offered a strong accuracy–speed balance, making it a viable alternative when runtime is a constraint.
-- **AlexNet** was the fastest but showed the lowest accuracy, particularly for breed classification.
+- **VGG** achieved perfect dog/non-dog detection and the highest breed accuracy — the recommended choice when correctness is the priority.
+- **ResNet** had strong breed accuracy (90%) but was the only model to misclassify a non-dog image as a dog, giving it 90% non-dog detection.
+- **AlexNet** matched VGG on dog and non-dog detection (100% each) but had the lowest breed accuracy (80%). It is the fastest by a wide margin.
 
-> This reflects a classic ML trade-off: **accuracy vs. computational cost**. For a real-world registration system, VGG is the best model — but ResNet is a compelling "good enough" alternative if speed matters.
+> This reflects a classic ML trade-off: **accuracy vs. computational cost**. For a real-world registration system, VGG is the best model. AlexNet is a strong alternative if speed matters — it matches VGG on dog detection while being 8× faster, at the cost of breed accuracy.
 
 ---
 
