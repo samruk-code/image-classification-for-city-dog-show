@@ -162,7 +162,7 @@ Pillow
 
 ## About
 
-This project is part of the **AWS AI & ML Scientist Nanodegree** by Udacity.
+This project is part of the **AWS AI Scientist Nanodegree** by Udacity.
 It was the first hands-on project in the program, focused on applying Python programming skills to real-world AI tasks using pre-trained deep learning models.
 
 ---
