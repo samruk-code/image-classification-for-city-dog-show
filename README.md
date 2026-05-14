@@ -167,4 +167,4 @@ It was the first hands-on project in the program, focused on applying Python pro
 
 ---
 
-*Built with Python | Deep Learning via PyTorch | Udacity × AWS Nanodegree*
+*Built with Python | Deep Learning via PyTorch | Udacity | AWS Nanodegree*
